@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>JittaKey 사용설명서 (한국어)</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; margin: 2em; }
+    h1, h2, h3 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    img { max-width: 100%; height: auto; margin: 1em 0; }
+  </style>
+</head>
+<body>
+
+<h1>JittaKey 사용설명서 (2025.06.29 기준)</h1>
+
+<h2>✨ 개요: WYSIWYG 일본어 입력의 혁신</h2>
+<p><strong>JittaKey</strong>는 기존의 로마자 변환 방식을 근본적으로 개선한 직관적(WYSIWYG) 일본어 입력 방식을 제공합니다.</p>
+<ul>
+  <li>입력한 그대로 표시 (What You See Is What You Get)</li>
+  <li>로마자 베이스 사용자에게도 빠르게 적응 가능</li>
+  <li>입력 횟수 약 20% 이상 감소</li>
+  <li>시각적 연상법을 통한 빠른 학습</li>
+</ul>
+
+<h2>🔧 핵심 입력 원리</h2>
+<ul>
+  <li><strong>「시」 = S</strong> / <strong>「요」 = L</strong> → S + L = 「쇼」</li>
+  <li>보이는 대로 음절을 순차적으로 입력 → 변환 대기 없이 바로 출력</li>
+  <li>예: 「쇼」→ s + l 입력 (syo가 아님)</li>
+  <li>변환 대기 없이 즉시 결과 확인</li>
+</ul>
+
+<h2>🧠 연상법 기반 키 배치 (Mnemonic Mapping)</h2>
+<table>
+  <thead>
+    <tr><th>키</th><th>문자</th><th>연상 힌트</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Q</td><td>ん</td><td>Queue(큐) 끝 음절</td></tr>
+    <tr><td>F</td><td>を</td><td>F와 「ヲ」 모양 유사</td></tr>
+    <tr><td>J</td><td>ゆ</td><td>Juudo (유도)</td></tr>
+    <tr><td>L</td><td>よ</td><td>YOLO → "요" + L</td></tr>
+    <tr><td>C</td><td>っ</td><td>촉음 쯔</td></tr>
+    <tr><td>X</td><td>ー</td><td>X-mas → 길게 이어지는 느낌</td></tr>
+    <tr><td>V</td><td>ヴ</td><td>VU음과 유사</td></tr>
+  </tbody>
+</table>
+
+<h2>🈂️ 스테가나 (작은 글자) 입력</h2>
+<ul>
+  <li>「ゃ」「ゅ」「ょ」「ぁ」등 스테가나는 독립적으로 입력됩니다 (자동 결합이나 조합의 개념 아님)</li>
+  <li>「ゃ」「ゅ」「ょ」「ぁ」 등 → Shift + 스테가나 선택 / 길게 눌러서 선택</li>
+  <li>예: Shift + あ → ぁ / Shift + や → ゃ</li>
+</ul>
+
+<h2>⌨️ 주요 키맵</h2>
+<ul>
+  <li><a href="jittakey_romaji+stegana.png" target="_blank">히라가나 + 스테가나 기본</a></li>
+  <li><a href="jitta_katakana_zennkaku.png" target="_blank">카타카나 (전각)</a></li>
+  <li><a href="jitta_katakana_hannkaku.png" target="_blank">카타카나 (반각)</a></li>
+  <li><a href="jitta_number_special.png" target="_blank">숫자 및 특수문자</a></li>
+  <li><a href="jitta_english_hannkaku.png" target="_blank">영어 (반각)</a></li>
+  <li><a href="jitta_stegana.png" target="_blank">특수 스테가나</a></li>
+  <li><a href="jitta_with_stegana.png" target="_blank">스테가나 전체</a></li>
+  <li><a href="jitta_control_button.png" target="_blank">설정 버튼</a></li>
+  <li><a href="jittakey_stegana.png" target="_blank">기본 스테가나 키맵</a></li>
+</ul>
+
+<div class="nav-buttons">
+  <button class="nav-button" id="prevButton">이전</button>
+  <button class="nav-button" id="nextButton">다음</button>
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+
+  function showPage(index) {
+    pages.forEach((page, i) => {
+      page.classList.remove('active');
+      if (i === index) {
+        page.classList.add('active');
+      }
+    });
+  }
+
+  document.getElementById('nextButton').addEventListener('click', () => {
+    if (currentPage < pages.length - 1) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  });
+
+  document.getElementById('prevButton').addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JittaKey User Manual (English)</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; margin: 2em; }
+    h1, h2, h3 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    img { max-width: 100%; height: auto; margin: 1em 0; }
+  </style>
+</head>
+<body>
+
+<h1>JittaKey User Manual (English)</h1>
+
+<h2>✨ Overview: WYSIWYG Japanese Input Revolution</h2>
+<p><strong>JittaKey</strong> redefines the traditional romaji-based Japanese input method by offering a **WYSIWYG (What You See Is What You Get)** system.</p>
+<ul>
+  <li>Input exactly as you see it (No conversion needed)</li>
+  <li>Quickly adaptable for romaji-based users</li>
+  <li>Reduces input time by about 20% or more</li>
+  <li>Uses visual mnemonics for smoother learning</li>
+</ul>
+
+<h2>🔧 Core Input Principle</h2>
+<ul>
+  <li><strong>「shi」 = S</strong> / <strong>「yo」 = L</strong> → S + L = 「sho」</li>
+  <li>Input syllables in sequence, exactly as seen → no conversion waiting</li>
+  <li>Example: 「sho」 → s + l input (not syo)</li>
+  <li>Instant result display without waiting for conversion</li>
+</ul>
+
+<h2>🧠 Mnemonic Mapping for Key Layout</h2>
+<table>
+  <thead>
+    <tr><th>Key</th><th>Character</th><th>Mnemonic Hint</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Q</td><td>ん</td><td>Queue (キュー) ending sound</td></tr>
+    <tr><td>F</td><td>を</td><td>F and 「ヲ」 shape similarity</td></tr>
+    <tr><td>J</td><td>ゆ</td><td>Juudo (柔道)</td></tr>
+    <tr><td>L</td><td>よ</td><td>YOLO → "yo" + L</td></tr>
+    <tr><td>C</td><td>っ</td><td>Chu (pronounced as っ)</td></tr>
+    <tr><td>X</td><td>ー</td><td>X-mas → long sound</td></tr>
+    <tr><td>V</td><td>ヴ</td><td>Similar to VU sound</td></tr>
+  </tbody>
+</table>
+
+<h2>🈂️ Stegana (Small Character) Input</h2>
+<ul>
+  <li>「ゃ」「ゅ」「ょ」「ぁ」 are input independently (not automatic combination)</li>
+  <li>「ゃ」「ゅ」「ょ」「ぁ」 can be selected by Shift + vowel or long press</li>
+  <li>Example: Shift + あ → ぁ / Shift + や → ゃ</li>
+</ul>
+
+<h2>⌨️ Keymap Images</h2>
+<ul>
+  <li><a href="jittakey_romaji+stegana.png" target="_blank">Hiragana + Stegana Basic</a></li>
+  <li><a href="jitta_katakana_zennkaku.png" target="_blank">Katakana (Full-width)</a></li>
+  <li><a href="jitta_katakana_hannkaku.png" target="_blank">Katakana (Half-width)</a></li>
+  <li><a href="jitta_number_special.png" target="_blank">Numbers & Special Characters</a></li>
+  <li><a href="jitta_english_hannkaku.png" target="_blank">English (Half-width)</a></li>
+  <li><a href="jitta_stegana.png" target="_blank">Special Stegana</a></li>
+  <li><a href="jitta_with_stegana.png" target="_blank">Stegana Full</a></li>
+  <li><a href="jitta_control_button.png" target="_blank">Control Buttons</a></li>
+  <li><a href="jittakey_stegana.png" target="_blank">Basic Stegana Keymap</a></li>
+</ul>
+
+<div class="nav-buttons">
+  <button class="nav-button" id="prevButton">Previous</button>
+  <button class="nav-button" id="nextButton">Next</button>
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+
+  function showPage(index) {
+    pages.forEach((page, i) => {
+      page.classList.remove('active');
+      if (i === index) {
+        page.classList.add('active');
+      }
+    });
+  }
+
+  document.getElementById('nextButton').addEventListener('click', () => {
+    if (currentPage < pages.length - 1) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  });
+
+  document.getElementById('prevButton').addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  });
+</script>
+
+</body>
+</html>

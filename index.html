@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="2;url=">
+  <title>JittaKey User Manual</title>
+  <script>
+    // Function to detect user's language and redirect accordingly
+    function detectLanguageAndRedirect() {
+      var userLang = navigator.language || navigator.userLanguage; // Get browser language
+      userLang = userLang.toLowerCase(); // Make it lowercase for comparison
+
+      if (userLang.includes('ko')) {
+        window.location.href = 'manual-ko.html'; // Redirect to Korean manual
+      } else if (userLang.includes('ja')) {
+        window.location.href = 'manual-ja.html'; // Redirect to Japanese manual
+      } else {
+        window.location.href = 'manual-en.html'; // Default to English manual
+      }
+    }
+
+    // Call the function to redirect based on detected language
+    detectLanguageAndRedirect();
+  </script>
+</head>
+<body>
+  <p>Redirecting to the appropriate version of the JittaKey manual based on your language...</p>
+</body>
+</html>
